@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0px;
     overflow: hidden;
+    font-family: 'Roboto';
 }
 
 .background {
@@ -13,7 +16,14 @@
 #menu {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    background-color: blueviolet;
+}
+
+#themes {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px;
 }
 
 #game {
@@ -66,6 +76,23 @@
     padding: 100px
 }
 
+#themes h1 {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+
+#themes ul {
+    text-decoration: none;
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+}
+
 .info {
     width: 100%;
     display: flex;
@@ -86,6 +113,9 @@
     color: #ffffff;
     font-size: 20px;
     background-color: #333399;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px 30px;
 }
 
@@ -135,12 +165,20 @@
     height: 25px;
 }
 
+.characters {
+    position: absolute;
+    bottom: 0px;
+    left: 20%;
+    display: flex;
+    user-select: none;
+}
+
 .label {
     height: 19rem;
     width: 100%;
     position: absolute;
     bottom: 0;
-    padding: 40px 100px;
+    padding: 30px 100px;
     background-color: #00000080;
     color: #ffffff;
     font-size: 1.8rem;
@@ -151,6 +189,7 @@
 }
 
 .question {
+    min-height: 5rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -161,6 +200,7 @@
     display: grid;
     grid-template-columns: repeat(2, 400px);
     grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
 }
 
 .option {
@@ -169,6 +209,16 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.wrong {
+    background-color: #c03232;
+    pointer-events: none;
+}
+
+.correct {
+    background-color: #51be51;
+    pointer-events: none;
 }
 
 .option:hover {
